@@ -23,7 +23,7 @@ export const UserRegistration = () => {
           "Success!",
           `User ${createdUser.get("username")} was successfully created!`
         );
-        navigation.navigate('Home');
+        navigation.navigate('MainContainer');
         return true;
       })
       .catch((error) => {

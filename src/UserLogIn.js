@@ -21,7 +21,7 @@ export const UserLogIn = () => {
         );
         const currentUser = await Parse.User.currentAsync();
         console.log(loggedInUser === currentUser);
-        navigation.navigate('Home');
+        navigation.navigate('MainContainer');
         return true;
       })
       .catch((error) => {

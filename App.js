@@ -9,10 +9,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { UserRegistration } from './src/UserRegistration';
 import { UserLogIn } from './src/UserLogIn';
-import { HelloUser } from './src/HelloUser';
 import { UserLogOut } from './src/UserLogOut';
-
-
+import { MainContainer } from './src/navigation/MainContainer';
 
 
 //Initializing the SDK. 
@@ -67,26 +65,11 @@ function UserLogInScreen() {
   );
 }
 
-function HomeScreen() {
+function MainContainerScreen() {
   return (
     <>
-      <StatusBar />
-      <SafeAreaView style={Styles.login_container}>
-        <View style={Styles.login_header}>
-          <Image
-            style={Styles.login_header_logo}
-            source={require('./assets/logo-back4app.png')}
-          />
-          <Text style={Styles.login_header_text}>
-            <Text style={Styles.login_header_text_bold}>
-              {'React Native on Back4App - '}
-            </Text>
-            {' Home'}
-          </Text>
-        </View>
-        <HelloUser />
-        <UserLogOut />
-      </SafeAreaView>
+      <MainContainer />
+      
     </>
   );
 }
@@ -98,11 +81,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
             screenOptions={{
-              headerLeft: null,
+              headerShown: false
             }}>
         <Stack.Screen name="Login" component={UserLogInScreen} />
         <Stack.Screen name="Sign Up" component={UserRegistrationScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="MainContainer" component={MainContainerScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
